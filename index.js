@@ -1,10 +1,36 @@
 const https = require('https');
 const fs = require('fs');
+const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { fakerES: faker } = require('@faker-js/faker');
 
 // Cargar configuración desde archivo
-const configData = JSON.parse(fs.readFileSync('config.json', 'utf8'));
+let configData = JSON.parse(fs.readFileSync('config.json', 'utf8'));
+
+// Función para actualizar requestCounter en config.json
+function updateRequestCounter(newValue) {
+    configData.config.requestCounter = newValue;
+    fs.writeFileSync('config.json', JSON.stringify(configData, null, 2), 'utf8');
+}
+
+// Función para guardar respuesta en logs
+function saveResponseToLog(response, intentoNumero) {
+    const logsDir = path.join(__dirname, 'logs');
+    
+    // Crear carpeta logs si no existe
+    if (!fs.existsSync(logsDir)) {
+        fs.mkdirSync(logsDir, { recursive: true });
+    }
+    
+    // Crear nombre de archivo con timestamp e intento
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filename = `response_${timestamp}_intento_${intentoNumero}.json`;
+    const filepath = path.join(logsDir, filename);
+    
+    // Guardar respuesta
+    fs.writeFileSync(filepath, JSON.stringify(response, null, 2), 'utf8');
+    console.log(`📝 Respuesta guardada en: ${filepath}`);
+}
 
 // Función para crear comentario
 async function createComment(config) {
@@ -159,12 +185,21 @@ async function main() {
     try {
         console.log('🚀 Creando comentario...');
         console.log(`🎲 Intento #${intentoNumero}`);
+        console.log(`📊 Request Counter: ${config.requestCounter}`);
         console.log(`💬 Texto: "${config.commentText}"\n`);
 
         const response = await createComment(config);
 
         console.log('✅ Respuesta recibida:\n');
         console.log(JSON.stringify(response, null, 2));
+
+        // Guardar respuesta en logs
+        saveResponseToLog(response, intentoNumero);
+
+        // Incrementar requestCounter y guardarlo en config.json
+        const newRequestCounter = config.requestCounter + 1;
+        updateRequestCounter(newRequestCounter);
+        console.log(`\n🔄 Request Counter actualizado a: ${newRequestCounter}`);
 
         // Buscar el legacy_fbid en la respuesta
         const responseStr = JSON.stringify(response);
@@ -189,6 +224,15 @@ async function main() {
 
     } catch (error) {
         console.error('❌ Error:', error);
+        
+        // Guardar error en logs también
+        const errorResponse = {
+            error: error.message,
+            stack: error.stack,
+            timestamp: new Date().toISOString(),
+            intentoNumero: intentoNumero
+        };
+        saveResponseToLog(errorResponse, intentoNumero);
     }
 }
 
