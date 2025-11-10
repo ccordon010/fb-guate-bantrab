@@ -179,7 +179,7 @@ async function main() {
     // CONFIGURACIÓN desde archivo config.json
     const config = {
         ...configData.config,
-        commentText: textoCompleto
+        commentText: textoBase
     };
 
     try {
@@ -191,7 +191,7 @@ async function main() {
         const response = await createComment(config);
 
         console.log('✅ Respuesta recibida:\n');
-        console.log(JSON.stringify(response, null, 2));
+        // console.log(JSON.stringify(response, null, 2));
 
         // Guardar respuesta en logs
         saveResponseToLog(response, intentoNumero);

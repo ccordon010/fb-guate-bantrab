@@ -1,0 +1,51 @@
+{
+  "config": {
+    "cookies": "sb=Nk4SaYK8USW70fWyCKHE__nW; datr=Nk4SaQl3ZE7AaSz0AgOS7GeZ; ps_l=1; ps_n=1; c_user=100000029662465; xs=36%3ANcDJXfr7J0ZtpA%3A2%3A1762807372%3A-1%3A-1; fr=0Gj7T3BEERtEfDUnU.AWf4pN3fVw9N_hTbtAakYWtfObCRKhUlV5tAG2DBr_v6s9qRa4I.BpEk42..AAA.0.0.BpEk5S.AWe0loDe8exxKeUiWnfVMJh0U5U; ar_debug=1; presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1762807516451%2C%22v%22%3A1%7D; wd=936x911",
+    "fb_dtsg": "NAftS7AIkBhp2d8zL1jcyUSkFuiFp7BJxkzJ7r3zp-jw4rVn5rQ1lTQ:36:1762807372",
+    "lsd": "8dP7dkJIXCgX8IH9q4LlSG",
+    "feedback_id": "ZmVlZGJhY2s6MTI1MDk0OTYwMDQxMTYzMg==",
+    "actor_id": "100000029662465",
+    "requestCounter": 74,
+    "commentRanges": [
+      {
+        "entity": {
+          "id": "100064898101316"
+        },
+        "length": 7,
+        "offset": 156
+      },
+      {
+        "entity": {
+          "id": "100094740747271"
+        },
+        "length": 17,
+        "offset": 164
+      }
+    ]
+  },
+  "params": {
+    "__aaid": "0",
+    "__a": "1",
+    "__hs": "20402.HYP:comet_pkg.2.1...0",
+    "dpr": "1",
+    "__ccg": "EXCELLENT",
+    "__rev": "1029659368",
+    "__s": "hf3rwx:lxyoe9:qo7k1j",
+    "__hsi": "7571200039288781674",
+    "__dyn": "7xeUjGU5a5Q1ryaxG4Vp41twWwIxu13wFwhUKbgS3q2ibwNw9G2Saw8i2S1DwUx60GE5O0BU2_CxS320qa321Rwwwqo462mcwfG12wOx62G5Usw9m1YwBgK7o6C1uwoE4G17yovwRwlE-U2exi4UaEW2G1jwUBwJK14xm3y11xfxmu3W3rwxwjFovUaU6a0BEbUG2-azqwaW223908O3216xi4UK2K2WEjxK2B08-269wkopg4-6o4e4UO2m3Gfw-KufxamEbbxG1fBG2-2K0E8461wweW2K3abxG6E",
+    "__csr": "gesfgz3QahcaNc9igX6MR7E9h4Ar4gMwwyl9kmz9ivRsydrpdr_lttgwBJV5AcGfagyhZOajZ8y8nXbtfOuTFydbCFLRZKyV4HEyjtk-XChqKClauRmRhQa9XlF2ahAhBXKCJAAWiGh7CAKiRBKlkHyVGyF8yQBjCKa8h4B_ARVDaAu-AGU_iA_LWBiGiayeLpel2ryQQBhvDx6mUGQAVKnGqEGEiA-uuKi9KpzmEDp94y4zaAx2GhbJ5viDF3AGz5UB29pUG4AbK8zqCyFFVkULCUV5CAxymqEPzVXBy8S68B3F8N6BiyUqxB0zLyQ4-AUO48HyAcDjKFWB-8yojUOmQ9y426l5y8S5qy8yWUgAyo8Upx-eCyrCUgmq8xq9xq5UbK32eCBzbG10xW8xCbzEiDxmm5qV9888W49FFuUCdDyEcWxKidwTBxy2ecwEwCz4awOxGC6Uizo7W1TxybK4EG5U4e8wHzUFCwJAz9aC8EbE4Dxq3K1Bxa2W5U9pobF8do66U-1WxG3maDxudx2i2WEnBCCDzU849wnQ0BUjwaifGewSwSxC0gm2y055e2W2-E0hzw1oJ02lS5U0Cuuu06mkcUx02mQm04V8do1C82eBg23xmu0iDgow08_G2q01bSwjE4i1yy8B075wcBwhXwwgy0Ydwqofo1mUeU16P03fUB1KU1xU8Ejw8-bAw10dwqU0FaWxla5t04rwgU5u8wLw7Zwe101vy2q58lgow5Uw9O0ciw2iU10E2G80UU1lo08s819k0aiK0tMw0JcMgwJwgU4Ofycw6u08axu06cE2rw3ao0-aaz81qUAw0xq0sO0asyy09B0GgiU0Gq1UwgUfU49o0JW9wl8",
+    "hsdp": "g5QwgjNq54eMUwpEh5GgfI64HfTkh3IXsx2NPYgxiaPjA-OWv22tTasgD2vaaVwR2cGb11TMGhC24fl5NI9Nco_97rsY_7EJ2yGwDii8W996hytPR7ACeGKP5C6hcnGwyt8y789Uwy4W48V6UEml4ax3MD6NBsD9V1sfmO4oIlb5gN4h0NEiziTfcqNH8x2d8yJEF2kSyz4bhq829aagSp2yDiijgNaP2pEWU846AQ48UFoqmkMcC59zC8cjKA5G8ahy1ngJ3VA9m5Q9J2Ombzka89Gjeqdli6yAjgN4wOaaINUx7oZ1oMsxkzgnxRe7yyVk6UgEAwsglKn9ByUC3e9x2kJ39En88Dx23KQAyBx62hIN4qiN1UlgpVE5W5rai7EK4qHKuWBUx6AU947WyQuiCq2CES8Khxsw-9xmdoybgCiFWDGvmdg411ydK6oN7grx92Acy8WK2aaBzeFeaDgsRxh5zpE8pUy1fwJyUizAZ6BCzoBa4e58gCSeyV9AmdHJAAaF8yXGWOkh2k8yV9BACidjCCJ6B_gUnh8e8yiUSU4KmqcxW3XwPx-7E8KfwF-XgS8z9kexOdxLG6oC4Cl38hxqF-YB9Va9CzEvz8vByUC9J6g9E-im8heQBQ9y8hWkDlqxi3p90nVEkG6UmKi3Oi6EK4Foa-lxi4UKq64H8i-2WewMzoO3C1uwp8iBzEy9w8W3OinUjK8yEOdo6e3eeUSfyoGES58sGGh49Gpp6oyiCCHqF5FxC1hwpFUlxW5EgwNwDxi2e12xO6oqDwwKp4aCXiVUFJ5_gJ6XoLzuimu0i21AwLxO04bXwMUqwcW3q0FE9Emw9u4E5m1xwYx60cfwpEiwdJ0au0iOeAwiU12U16oiw22E4S1WwgU9o28w4Bxq1Ixa0KU4y2W7o2zwa60IEpwFzo3Bw7aw6cwh824wwwrE1n988U36wPG0yE5a320E81oU18U",
+    "hblp": "1a543245IkHh86u8wnUKfz6dweui2u4oB3eey8nxK0hefwICwZxi2K5E56i6ryEjz8jwNwfC9xu8x2m6A3a1jxq0wEb89KFQayoOi2mfG68O8yolx648eoC6UC7Euxe3iqbxW7Uuxa585FeaCwIwh89E6-688UcEapE4qm1Awh8hDwGx6Ey2O12Dz9UhwHy-8yk6EkxG68O4p8-6WzE6x5Bz89ojxW2u522F8bEnG0IA1-wxzEeEgwPUWdwQAxy9zEpwSAwaa7E2TAzE5e2e3222cwVpo24xicwJw8W9w4lwmE5C3m2y3q48gAwjo4617w4RzU6y8wBxq2e2G3SE9omG582cxu2u1TwFwHwkFEnwgpe19xybwcC4EfU8ErK0x82mwAy8lwbu19xu3a0CUdo4i7Fo27wu9o9E885C0Co22wg82swCwKwmEcXwlo66cwgoaS2a0MUcU6u0AEbE2sw4owgo6bwwxS486e0JUWi1bwkE2Uzo10Ey4E6OFEpw5JyU4SaK1HwgU9o28w4axG5EfUhxG4E7e17wgpEbEtwQwrE2xwoXwiEpAwAzo5K2y1ww3lU4a0IEO7EO1gxKE662m0zV88VofoaE5iEcWw8G4byES2i32q3K782EUO0yk2Wq297w9m16wVz8KcGcw",
+    "sjsp": "g5QwgjNq54eMUwpEh5GgfI64HfTkh3IXsx2NPYgxiaPjA-OWv22tTasSD2vaaVwwx4ldayMgtYaApwx3Rhsr25hc-rSxSTffN4O8Aa8W5qbjEzEzkp69TeIubedJ5CtOm4Wx57jg9u8GHaggyCBz8Slx6kUlgPOofFQ68K74UGcq4yTo99EyoyB8UylUAES5i0zG212yDijwoQ6AQ0xUa234agmJ0KgbUpgboR2y2qwxh2154Qch8cA2y6k1lgnxRe7O2Vk6UgDxZ1mc-m1jx2q35wyw9x18weuq1uxDo8U8UhGmagS2h0KzqpEaotAxC4EC2fx-idDGvm1fgozrwLgbEOcy8WK2a48PGqaDgdUqwxw8WbwSCxt1m326F8rGnxmcK44h1-ivACgGUpwrUqwko77wkU47whoW8wjo2mz8W5U5Km1KwEwhU3JwhofFobpu2y0OU1NUf98dorwaC2u0h-1CDwn85C5823xC6EabCh2FKQKuarhvQbhKS0l6",
+    "__comet_req": "15",
+    "jazoest": "25572",
+    "__spin_r": "1029659368",
+    "__spin_b": "trunk",
+    "__crn": "comet.fbweb.CometProfileTimelineListViewRoute",
+    "fb_api_caller_class": "RelayModern",
+    "fb_api_req_friendly_name": "useCometUFICreateCommentMutation",
+    "server_timestamps": "true",
+    "doc_id": "25082280574724522"
+  },
+  "textoBase": "Hoy y siempre, solo con la nuestra, nuestra bicolor, la esperanza nunca muere, y estamos llenos de ilusión por ver a nuestra selección triunfar #VamosGuate Bantrab Deportes Bantrab"
+}
