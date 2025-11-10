@@ -1,6 +1,10 @@
 const https = require('https');
+const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 const { fakerES: faker } = require('@faker-js/faker');
+
+// Cargar configuración desde archivo
+const configData = JSON.parse(fs.readFileSync('config.json', 'utf8'));
 
 // Función para crear comentario
 async function createComment(config) {
@@ -58,32 +62,23 @@ async function createComment(config) {
     // Construir el body como form-urlencoded
     const params = new URLSearchParams();
 
+    // Parámetros dinámicos
     params.append('av', actor_id);
-    params.append('__aaid', '0');
     params.append('__user', actor_id);
-    params.append('__a', '1');
     params.append('__req', requestCounter.toString());
-    params.append('__hs', '20402.HYP:comet_pkg.2.1...0');
-    params.append('dpr', '1');
-    params.append('__ccg', 'EXCELLENT');
-    params.append('__rev', '1029650310');
-    params.append('__s', 'y0ysaj:ua7de0:ko27sl');
-    params.append('__hsi', '7571162660542596440');
-    params.append('__dyn', '7xeUjGU5a5Q1ryaxG4Vp41twWwIxu13wFG14yUJ3odE98K361twYwJyE24wJwpUe8hwaG1sw9u0LVEtwMw6ywIK1Rwwwqo462mcwfG12wOx62G5Usw9m1YwBgK7o6C1uwoE4G17yovwRwlE-U2exi4UaEW2au1jwUBwJK14xm3y11xfxmu3W3y261eBx_wHwfC2-awLyESE2KwwwOg2cwMwhEkxebwHwKG4UrwFg2fwxyo566k1fxC13xecwBwWzUfHDzUiBG2OUqwjVqwLwHwa211wo83KwHwOyUqxG');
-    params.append('__csr', 'gen1nbMF1f2dl2Aj4gH7llMRfftYABnfdkAG2Qp9LcAIyZlkIAR9nPaQlpJtCKBjkF-mKiF5OGF98B9R8BrGExQ_TiRnhWSSGHppAdhGARB89iGirCUyiAuDCiZ3azrSFFp4F6gGBV9kVoGFO92XVrx3Fy8iK48KboWdBGyamEymAaHjKS9iypHjCHAiAABGax28gOUhVAnxLKdjyrh4EZebzV8Ll3-F8KmibGbK8gnxa-czXyoK8hF4vGVoqKWDKUO9ByErzEnKaJ3omyEO48B1SuagO2yfDAxO4pp44F9A8yp8kVXUhDxam5ojKdKiU9oO4UOEy4EsAxKi26EswjE9ufwXwJxSFoO2C5ElyU9k2x1G3G1Fz8f8kCwOwYxG8wauawzx6dwGxy1TBKfyoOUdUpwiV8fEOq8wYxO3u3KbgF0MAwLwionwgElwfa3K1SwgE4a1uG2K7Ecotyo4edzEhDrwKK0zWCwGwcWm2q2O2-025abFo08_Q028F1iU0g8Cwb109R00GlwNw4Pw0cxm1Cxi0Gaxl02E9oloog5a0B9S0Ro3Qw8O0gra0dyxG17Ax20SU5-5o9E7aVE0hiy4680Im9ykcDg11o25wTw2Xokw1uC3K3Kpw25E5a0aXw2N82bw65w5ww1_e0oy4U1IEC1yK0dt80IE16o3-c0v-17w1GK1jw3t80Oq1Yo1roC9g1-o0jowhQ2B02mU2vxO0Eo2yiw2vEy');
-    params.append('__comet_req', '15');
-    params.append('fb_dtsg', fb_dtsg);
-    params.append('jazoest', '25319');
-    params.append('lsd', lsd);
-    params.append('__spin_r', '1029650310');
-    params.append('__spin_b', 'trunk');
     params.append('__spin_t', Math.floor(Date.now() / 1000).toString());
-    params.append('__crn', 'comet.fbweb.CometProfileTimelineListViewRoute');
-    params.append('fb_api_caller_class', 'RelayModern');
-    params.append('fb_api_req_friendly_name', 'useCometUFICreateCommentMutation');
-    params.append('server_timestamps', 'true');
+
+    // Parámetros estáticos desde config.json
+    Object.entries(configData.params).forEach(([key, value]) => {
+        params.append(key, value);
+    });
+
+    // Parámetros que vienen del config (fb_dtsg y lsd)
+    params.append('fb_dtsg', fb_dtsg);
+    params.append('lsd', lsd);
+    
+    // Variables generadas dinámicamente
     params.append('variables', JSON.stringify(variables));
-    params.append('doc_id', '25082280574724522');
 
     const postData = params.toString();
 
@@ -146,8 +141,8 @@ async function main() {
     const intentoNumero = Math.floor(100000 + Math.random() * 900000);
 
     // Texto original del comentario + animal + intento
-    const textoBase = 'Hoy y siempre, solo con la nuestra. La Selección de Guatemala estara en el mundial! Bantrab Deportes Bantrab.';
-    const textoConAnimal = `${textoBase} intento #${intentoNumero} de conseguir entradas. ${faker.internet.emoji({
+    const textoBase = configData.textoBase;
+    const textoCompleto = `${textoBase} intento #${intentoNumero} de conseguir entradas. ${faker.internet.emoji({
         types: ['activity']
     })} ${faker.internet.emoji({
         types: ['smiley']
@@ -155,27 +150,10 @@ async function main() {
         types: ['person']
     })}`;
 
-    // CONFIGURACIÓN - Reemplaza con tus valores actuales
+    // CONFIGURACIÓN desde archivo config.json
     const config = {
-        cookies: 'datr=0DfIaG3K21syIwmnR0xolEBb; sb=0TfIaAtCeUWIEUoLPP799FoY; c_user=100001547167044; ps_l=1; ps_n=1; fr=1o4ztqKy6MPK3Pd8I.AWe8g3zC5NsPCLCgLbIOLXZyojjAvSZSuacrT1IltOaBlYndMEs.BpEiof..AAA.0.0.BpEiof.AWeAcBk-4By7OWPWySDwjWD7t6A; xs=13%3AI8GUkCVe6T22hw%3A2%3A1759371011%3A-1%3A-1%3A%3AAcyyy3_A5d5Dre8XFtxKqk7CDpM1A7Ypnv-wW5BnMZE; wd=1536x742; dpr=1.25',
-        fb_dtsg: 'NAfurhXZwg2KkULZvK14Z-4SYOTxlgMFC8vFxSV3b19r_0pGjC7V3ZQ:13:1759371011',
-        lsd: 'IaEzJcvxhYt85U20ilvL0-',
-        feedback_id: 'ZmVlZGJhY2s6MTI1MDk0OTYwMDQxMTYzMg==',
-        commentText: textoConAnimal,
-        commentRanges: [
-            {
-                entity: { id: "100064898101316" },
-                length: 7,
-                offset: 84
-            },
-            {
-                entity: { id: "100094740747271" },
-                length: 17,
-                offset: 92
-            }
-        ],
-        actor_id: '100001547167044',
-        requestCounter: 36 // Incrementa este número cada vez
+        ...configData.config,
+        commentText: textoCompleto
     };
 
     try {
